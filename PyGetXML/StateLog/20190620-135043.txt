@@ -1,0 +1,24 @@
+7023132Carmen LaiLogged OffNULLfalseaway3
+7023178Chun Way YapReady599trueAvailable1
+7023120HaiQiang YuanReady2085falseaway3
+7023190Hailong LiuNot Ready1453falseaway3
+7023086Jia Sheng Soo HoeNot Ready855115falseaway3
+7023155Lei XuReady99335falseaway3
+7023181Liming ZhangNot Ready63261falseaway3
+7023048Runsheng ZhaoLogged OffNULLfalseaway3
+7023168Shaopeng XuReady1113trueAvailable1
+7023134Xiaoya XieReady2069falseaway3
+7023185Xin ChenNot Ready132953falseaway3
+7023130Xing HengNot Ready1609falseaway3
+7023167Yanbin LiReady397trueAvailable1
+7023184Yaoming RenNot Ready14285falseaway3
+7023177Yi Huang LoyNot Ready159265falseaway3
+7023186Yi XuNot Ready189443falseaway3
+7022543Yibai ZhaoLogged OffNULLfalseaway3
+7023052Yunfeng QiReady13501falseaway3
+7023047Yuqi GuNot Ready15571falseaway3
+7023166Yuxuan XuReady6217falseaway3
+7023082Zhaoyong WuLogged OffNULLtrueaway3
+7023187Zhenyang GaoNot Ready175281trueaway3
+7023169Zhenyu GuLogged OffNULLfalseaway3
+7023112Ziheng ZhangNot Ready2487falseaway3

@@ -1,0 +1,26 @@
+   7023745 Ayden FooLogged Off      NULL      true      Away         3
+   7023132Carmen LaiLogged Off      NULL     false      Away         3
+   7023178Chun Way Yap     Ready       153      true Available         1
+   7023120HaiQiang Yuan Not Ready       537     false      Away         3
+   7023190Hailong Liu Not Ready     10219     false      Away         3
+   7023086Jia Sheng Soo Hoe Not Ready    863881     false      Away         3
+   7023155    Lei Xu     Ready    108101     false      Away         3
+   7023181Liming Zhang Not Ready     72027     false      Away         3
+   7023048Runsheng ZhaoLogged Off      NULL     false      Away         3
+   7023168Shaopeng Xu     Ready      1139      true Available         1
+   7023134Xiaoya Xie     Ready     10835     false      Away         3
+   7023185  Xin Chen Not Ready    141719     false      Away         3
+   7023130 Xing HengLogged Off      NULL     false      Away         3
+   7023167 Yanbin Li Not Ready      5263      true      Away         3
+   7023184Yaoming Ren Not Ready      1363     false      Away         3
+   7023177Yi Huang Loy Not Ready    168031     false      Away         3
+   7023186     Yi Xu     Ready      3769     false      Away         3
+   7022543Yibai ZhaoLogged Off      NULL     false      Away         3
+   7023052Yunfeng Qi     Ready      2363     false      Away         3
+   7023047   Yuqi Gu Not Ready      4977     false      Away         3
+   7023166 Yuxuan Xu     Ready       207      true Available         1
+   7023082Zhaoyong WuLogged Off      NULL      true      Away         3
+   7023187Zhenyang Gao Not Ready    184047      true      Away         3
+   7023169 Zhenyu GuLogged Off      NULL     false      Away         3
+   7022313Zhi Yang Ong     Ready      4163     false      Away         3
+   7023112Ziheng Zhang Not Ready     11253     false      Away         3

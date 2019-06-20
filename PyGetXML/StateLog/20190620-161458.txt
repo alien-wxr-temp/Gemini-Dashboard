@@ -1,0 +1,26 @@
+7023745-Ayden Foo-Logged Off-NULL-true-away-3-
+7023132-Carmen Lai-Logged Off-NULL-false-away-3-
+7023178-Chun Way Yap-Ready-40-true-Available-1-
+7023120-HaiQiang Yuan-Not Ready-424-false-away-3-
+7023190-Hailong Liu-Not Ready-10106-false-away-3-
+7023086-Jia Sheng Soo Hoe-Not Ready-863768-false-away-3-
+7023155-Lei Xu-Ready-107988-false-away-3-
+7023181-Liming Zhang-Not Ready-71914-false-away-3-
+7023048-Runsheng Zhao-Logged Off-NULL-false-away-3-
+7023168-Shaopeng Xu-Ready-1026-true-Available-1-
+7023134-Xiaoya Xie-Ready-10722-false-away-3-
+7023185-Xin Chen-Not Ready-141606-false-away-3-
+7023130-Xing Heng-Logged Off-NULL-false-away-3-
+7023167-Yanbin Li-Not Ready-5150-true-away-3-
+7023184-Yaoming Ren-Not Ready-1250-false-away-3-
+7023177-Yi Huang Loy-Not Ready-167918-false-away-3-
+7023186-Yi Xu-Ready-3656-false-away-3-
+7022543-Yibai Zhao-Logged Off-NULL-false-away-3-
+7023052-Yunfeng Qi-Ready-2250-false-away-3-
+7023047-Yuqi Gu-Not Ready-4864-false-away-3-
+7023166-Yuxuan Xu-Ready-94-true-Available-1-
+7023082-Zhaoyong Wu-Logged Off-NULL-true-away-3-
+7023187-Zhenyang Gao-Not Ready-183934-true-away-3-
+7023169-Zhenyu Gu-Logged Off-NULL-false-away-3-
+7022313-Zhi Yang Ong-Ready-4050-false-away-3-
+7023112-Ziheng Zhang-Not Ready-11140-false-away-3-

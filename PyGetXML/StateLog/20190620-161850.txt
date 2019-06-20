@@ -1,0 +1,26 @@
+7023745        Ayden Foo      Logged Off     NULL           true           Away           3              
+7023132        Carmen Lai     Logged Off     NULL           false          Away           3              
+7023178        Chun Way Yap   Ready          271            true           Available      1              
+7023120        HaiQiang Yuan  Not Ready      655            false          Away           3              
+7023190        Hailong Liu    Not Ready      10337          false          Away           3              
+7023086        Jia Sheng Soo HoeNot Ready      863999         false          Away           3              
+7023155        Lei Xu         Ready          108219         false          Away           3              
+7023181        Liming Zhang   Not Ready      72145          false          Away           3              
+7023048        Runsheng Zhao  Logged Off     NULL           false          Away           3              
+7023168        Shaopeng Xu    Ready          1257           true           Available      1              
+7023134        Xiaoya Xie     Ready          10953          false          Away           3              
+7023185        Xin Chen       Not Ready      141837         false          Away           3              
+7023130        Xing Heng      Logged Off     NULL           false          Away           3              
+7023167        Yanbin Li      Not Ready      5381           true           Away           3              
+7023184        Yaoming Ren    Not Ready      1481           false          Away           3              
+7023177        Yi Huang Loy   Not Ready      168149         false          Away           3              
+7023186        Yi Xu          Ready          3887           false          Away           3              
+7022543        Yibai Zhao     Logged Off     NULL           false          Away           3              
+7023052        Yunfeng Qi     Ready          2481           false          Away           3              
+7023047        Yuqi Gu        Not Ready      5095           false          Away           3              
+7023166        Yuxuan Xu      Ready          61             false          Away           3              
+7023082        Zhaoyong Wu    Logged Off     NULL           true           Away           3              
+7023187        Zhenyang Gao   Not Ready      184165         true           Away           3              
+7023169        Zhenyu Gu      Logged Off     NULL           false          Away           3              
+7022313        Zhi Yang Ong   Ready          4281           false          Away           3              
+7023112        Ziheng Zhang   Not Ready      11371          false          Away           3              
