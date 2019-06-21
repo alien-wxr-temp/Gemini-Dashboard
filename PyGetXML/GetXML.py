@@ -11,7 +11,7 @@ with open('./nameList.txt', 'r') as f:
     for line in f:
         statelist.append(['',line.strip(),'','','','',''])
 
-inc = 1
+inc = 27
 while True:
     try:
         xml = []
@@ -45,7 +45,8 @@ while True:
             while (j<len(xml2) and xml2[j][1]!=statelist[i][1]):
                 j=j+1
             statelist[i][0]=xml2[j][0]
-            statelist[i][2]=xml2[j][2]
+            if (xml2[j][2]!=''):
+                statelist[i][2]=xml2[j][2]
             statelist[i][3]=xml2[j][3]
             statelist[i][4]=xml2[j][4]
             #OnShift or OffShift
@@ -83,7 +84,40 @@ while True:
                 f.writelines('\n')
             f.close()
 
+        with open('./StateLog/Current.txt', 'w') as f:
+            for item in statelist:
+                f.writelines('|'+item[0].ljust(7,' '))  #No.
+                f.writelines('|'+item[1].ljust(18,' ')) #Name
+                f.writelines('|'+item[2].ljust(10,' ')) #ifReady
+                f.writelines('|'+item[3].ljust(6,' ')) #TimeInState
+                f.writelines('|'+item[4].ljust(8,' '))  #ifOnShift
+                f.writelines('|'+item[5].ljust(10,' ')) #State
+                f.writelines('|'+item[6].ljust(1,' '))  #StateNum
+                f.writelines('\n')
+            f.close()
+
         with open('./ABLog/'+ticks+'.txt', 'w') as f:
+            f.writelines('Available AE: '+str(availableNum)+' \n')
+            print('Available AE: '+str(availableNum))
+            for item in availableList:
+                f.writelines('    '+item)
+                print('    '+item)
+                f.writelines('\n')
+            f.writelines('\n')
+            f.writelines('Busy AE: '+str(busyNum)+' \n')
+            print('\nBusy AE: '+str(busyNum))
+            for item in busyList:
+                 f.writelines('    '+item)
+                 print('    '+item)
+                 f.writelines('\n')
+            f.writelines('\n')
+            f.writelines('Away AE: '+str(awayNum)+' \n')
+            for item in awayList:
+                f.writelines('    '+item)
+                f.writelines('\n')
+            f.close()
+
+        with open('./ABLog/Current.txt', 'w') as f:
             f.writelines('Available AE: '+str(availableNum)+' \n')
             print('Available AE: '+str(availableNum))
             for item in availableList:
