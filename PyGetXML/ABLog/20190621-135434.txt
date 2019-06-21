@@ -1,0 +1,31 @@
+Available AE: 3 
+    Ayden Foo
+    Yunfeng Qi
+    Yuqi Gu
+
+Busy AE: 0 
+
+Away AE: 23 
+    Carmen Lai
+    Chun Way Yap
+    HaiQiang Yuan
+    Hailong Liu
+    Jia Sheng Soo Hoe
+    Lei Xu
+    Liming Zhang
+    Runsheng Zhao
+    Shaopeng Xu
+    Xiaoya Xie
+    Xin Chen
+    Xing Heng
+    Yanbin Li
+    Yaoming Ren
+    Yi Huang Loy
+    Yi Xu
+    Yibai Zhao
+    Yuxuan Xu
+    Zhaoyong Wu
+    Zhenyang Gao
+    Zhenyu Gu
+    Zhi Yang Ong
+    Ziheng Zhang

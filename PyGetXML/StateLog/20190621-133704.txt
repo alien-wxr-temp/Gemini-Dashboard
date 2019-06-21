@@ -1,0 +1,26 @@
+|7023745|Ayden Foo         |Not Ready |1647  |OnShift |Away      |3
+|7023132|Carmen Lai        |Logged Off|NULL  |OffShift|Away      |3
+|7023178|Chun Way Yap      |Not Ready |12509 |OffShift|Away      |3
+|7023120|HaiQiang Yuan     |Not Ready |5989  |OffShift|Away      |3
+|7023190|Hailong Liu       |Not Ready |87027 |OffShift|Away      |3
+|7023086|Jia Sheng Soo Hoe |Not Ready |940689|OffShift|Away      |3
+|7023155|Lei Xu            |Ready     |184909|OffShift|Away      |3
+|7023181|Liming Zhang      |Not Ready |333   |OffShift|Away      |3
+|7023048|Runsheng Zhao     |Not Ready |5501  |OffShift|Away      |3
+|7023168|Shaopeng Xu       |Not Ready |7455  |OffShift|Away      |3
+|7023134|Xiaoya Xie        |Not Ready |70055 |OffShift|Away      |3
+|7023185|Xin Chen          |Not Ready |59977 |OnShift |Away      |3
+|7023130|Xing Heng         |Logged Off|NULL  |OnShift |Away      |3
+|7023167|Yanbin Li         |Not Ready |73147 |OffShift|Away      |3
+|7023184|Yaoming Ren       |Not Ready |6307  |OffShift|Away      |3
+|7023177|Yi Huang Loy      |Not Ready |244839|OffShift|Away      |3
+|7023186|Yi Xu             |Not Ready |73275 |OffShift|Away      |3
+|7022543|Yibai Zhao        |Logged Off|NULL  |OffShift|Away      |3
+|7023052|Yunfeng Qi        |Ready     |10955 |OffShift|Away      |3
+|7023047|Yuqi Gu           |Ready     |517   |OnShift |Available |1
+|7023166|Yuxuan Xu         |Ready     |307   |OnShift |Available |1
+|7023082|Zhaoyong Wu       |Logged Off|NULL  |OnShift |Away      |3
+|7023187|Zhenyang Gao      |Not Ready |12307 |OnShift |Away      |3
+|7023169|Zhenyu Gu         |Logged Off|NULL  |OffShift|Away      |3
+|7022313|Zhi Yang Ong      |Ready     |1121  |OffShift|Away      |3
+|7023112|Ziheng Zhang      |Not Ready |88061 |OffShift|Away      |3
