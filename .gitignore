@@ -338,3 +338,6 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/PyGetXML/StateLog
+/PyGetXML/Exception
+/PyGetXML/ABLog

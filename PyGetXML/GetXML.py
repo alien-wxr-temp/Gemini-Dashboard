@@ -9,22 +9,24 @@ url = 'https://us-aus-cuic1:8444/cuicui/permalink/?viewId=65B8C92C10000165005C5F
 statelist = []
 with open('./nameList.txt', 'r') as f:
     for line in f:
-        statelist.append(['',line.strip(),'','','','',''])
+        statelist.append(['',line.strip(),'','','','','0','0','0'])
 
 inc = 27
 while True:
     try:
         xml = []
-        availableList = []
-        availableNum = 0
+        freeList = []
+        freeNum = 0
         busyList = []
         busyNum = 0
         awayList = []
         awayNum = 0
         
         ticks = time.strftime("%Y%m%d-%H%M%S", time.localtime())
+
         myXML = requests.get(url, verify=False)
         soup = BeautifulSoup(myXML.text, "lxml")
+
         for row_tag in soup.report.children:
             j=0
             single = ['','','','','','','']
@@ -47,80 +49,69 @@ while True:
             statelist[i][0]=xml2[j][0]
             if (xml2[j][2]!=''):
                 statelist[i][2]=xml2[j][2]
-            statelist[i][3]=xml2[j][3]
+            if xml2[j][3]!='NULL' and int(xml2[j][3])>=18000:
+                statelist[i][3]='18000'
+            else:
+                statelist[i][3]=xml2[j][3]
             statelist[i][4]=xml2[j][4]
             #OnShift or OffShift
             if (statelist[i][4]=='true'):
                 statelist[i][4] = 'OnShift'
             else:
                 statelist[i][4] = 'OffShift'
-            #Available or Busy or Away
-            if (statelist[i][4]=='OnShift' and statelist[i][2]=='Ready'):
-                statelist[i][5]='Available'
-                statelist[i][6]='1'
-                availableNum = availableNum+1
-                availableList.append(statelist[i][1])
-            elif (statelist[i][4]=='OnShift' and (statelist[i][2]=='Talking' or statelist[i][2]=='Work Ready')):
-                statelist[i][5]='Busy'
-                statelist[i][6]='2'
-                busyNum = busyNum+1
-                busyList.append(statelist[i][1])
+            #State
+            if statelist[i][4]=='OnShift':
+                if statelist[i][2]=='Ready':
+                    statelist[i][5]='Free'
+                    freeNum = freeNum+1
+                    freeList.append(statelist[i][1])
+                elif statelist[i][2]=='Talking' or statelist[i][2]=='Work Ready':
+                    statelist[i][5]='Busy'
+                    busyNum = busyNum+1
+                    busyList.append(statelist[i][1])
+                elif statelist[i][2]=='Not Ready':
+                    statelist[i][5]='Away'
+                    awayNum = awayNum+1
+                    awayList.append(statelist[i][1])
+                else:
+                    statelist[i][5]='ErrState'
             else:
-                statelist[i][5]='Away'
-                statelist[i][6]='3'
-                awayNum = awayNum+1
-                awayList.append(statelist[i][1])
+                statelist[i][5]='Offline'
             i=i+1
 
         with open('./StateLog/'+ticks+'.txt', 'w') as f:
             for item in statelist:
                 f.writelines('|'+item[0].ljust(7,' '))  #No.
-                f.writelines('|'+item[1].ljust(18,' ')) #Name
+                f.writelines('|'+item[1].ljust(17,' ')) #Name
                 f.writelines('|'+item[2].ljust(10,' ')) #ifReady
-                f.writelines('|'+item[3].ljust(6,' ')) #TimeInState
+                f.writelines('|'+item[3].ljust(5,' '))  #TimeInState
                 f.writelines('|'+item[4].ljust(8,' '))  #ifOnShift
-                f.writelines('|'+item[5].ljust(10,' ')) #State
-                f.writelines('|'+item[6].ljust(1,' '))  #StateNum
+                f.writelines('|'+item[5].ljust(8,' ')) #State
+                f.writelines('|'+item[6].ljust(5,' '))  #FreeTime
+                f.writelines('|'+item[6].ljust(5,' '))  #BusyTime
+                f.writelines('|'+item[6].ljust(5,' '))  #AwayTime
                 f.writelines('\n')
             f.close()
 
         with open('./StateLog/Current.txt', 'w') as f:
             for item in statelist:
                 f.writelines('|'+item[0].ljust(7,' '))  #No.
-                f.writelines('|'+item[1].ljust(18,' ')) #Name
+                f.writelines('|'+item[1].ljust(17,' ')) #Name
                 f.writelines('|'+item[2].ljust(10,' ')) #ifReady
-                f.writelines('|'+item[3].ljust(6,' ')) #TimeInState
+                f.writelines('|'+item[3].ljust(5,' '))  #TimeInState
                 f.writelines('|'+item[4].ljust(8,' '))  #ifOnShift
-                f.writelines('|'+item[5].ljust(10,' ')) #State
-                f.writelines('|'+item[6].ljust(1,' '))  #StateNum
-                f.writelines('\n')
-            f.close()
-
-        with open('./ABLog/'+ticks+'.txt', 'w') as f:
-            f.writelines('Available AE: '+str(availableNum)+' \n')
-            print('Available AE: '+str(availableNum))
-            for item in availableList:
-                f.writelines('    '+item)
-                print('    '+item)
-                f.writelines('\n')
-            f.writelines('\n')
-            f.writelines('Busy AE: '+str(busyNum)+' \n')
-            print('\nBusy AE: '+str(busyNum))
-            for item in busyList:
-                 f.writelines('    '+item)
-                 print('    '+item)
-                 f.writelines('\n')
-            f.writelines('\n')
-            f.writelines('Away AE: '+str(awayNum)+' \n')
-            for item in awayList:
-                f.writelines('    '+item)
+                f.writelines('|'+item[5].ljust(8,' ')) #State
+                f.writelines('|'+item[6].ljust(5,' '))  #FreeTime
+                f.writelines('|'+item[6].ljust(5,' '))  #BusyTime
+                f.writelines('|'+item[6].ljust(5,' '))  #AwayTime
                 f.writelines('\n')
             f.close()
 
         with open('./ABLog/Current.txt', 'w') as f:
-            f.writelines('Available AE: '+str(availableNum)+' \n')
-            print('Available AE: '+str(availableNum))
-            for item in availableList:
+            f.writelines(time.strftime("%Y/%m/%d - %H:%M:%S", time.localtime())+'\n')
+            f.writelines('Free AE: '+str(freeNum)+' \n')
+            print('Free AE: '+str(freeNum))
+            for item in freeList:
                 f.writelines('    '+item)
                 print('    '+item)
                 f.writelines('\n')
@@ -133,14 +124,13 @@ while True:
                  f.writelines('\n')
             f.writelines('\n')
             f.writelines('Away AE: '+str(awayNum)+' \n')
-            for item in awayList:
-                f.writelines('    '+item)
-                f.writelines('\n')
             f.close()
 
         time.sleep(inc)
     except:
         print("exception and restart")
-        with open('./Exception/'+ticks+'.txt','w') as f:
+        with open('./Exception/errorLog.txt','a') as f:
+            f.write(time.strftime("%Y/%m/%d - %H:%M:%S", time.localtime())+'\n')
             f.close()
+        time.sleep(inc/3)
         continue
