@@ -7,25 +7,29 @@ import operator
 url = 'https://us-aus-cuic1:8444/cuicui/permalink/?viewId=65B8C92C10000165005C5FD87D5BEAE0&linkType=xmlType&viewType=Grid'
 
 statelist = []
+timetick1 = int(time.time())
+timetick2 = int(time.time())
 with open('./nameList.txt', 'r') as f:
     for line in f:
-        statelist.append(['',line.strip(),'','','','','0','0','0'])
+        statelist.append(['',line.strip(),'','','','',0,0,0,0])
 
 inc = 27
 while True:
     try:
-        xml = []
-        freeList = []
-        freeNum = 0
-        busyList = []
-        busyNum = 0
-        awayList = []
-        awayNum = 0
-        
-        ticks = time.strftime("%Y%m%d-%H%M%S", time.localtime())
+        xml = []        #origin xml data elements
+        freeList = []   #
+        freeNum = 0     #
+        busyList = []   #
+        busyNum = 0     #
+        awayList = []   #
+        awayNum = 0     #
 
+        #Web spider
         myXML = requests.get(url, verify=False)
         soup = BeautifulSoup(myXML.text, "lxml")
+        timetick1 = int(timetick2)
+        timetick2 = int(time.time())
+        ticks = time.strftime("%Y%m%d-%H%M%S", time.localtime())
 
         for row_tag in soup.report.children:
             j=0
@@ -47,18 +51,32 @@ while True:
             while (j<len(xml2) and xml2[j][1]!=statelist[i][1]):
                 j=j+1
             statelist[i][0]=xml2[j][0]
-            if (xml2[j][2]!=''):
-                statelist[i][2]=xml2[j][2]
-            if xml2[j][3]!='NULL' and int(xml2[j][3])>=18000:
-                statelist[i][3]='18000'
-            else:
-                statelist[i][3]=xml2[j][3]
-            statelist[i][4]=xml2[j][4]
             #OnShift or OffShift
-            if (statelist[i][4]=='true'):
-                statelist[i][4] = 'OnShift'
+            if (xml2[j][4]=='true'):
+                xml2[j][4] = 'OnShift'
             else:
-                statelist[i][4] = 'OffShift'
+                xml2[j][4] = 'OffShift'
+
+            if xml2[j][3]=='NULL' or int(xml2[j][3])>=18000:
+                xml2[j][3]='18000'
+            else:
+                if xml2[j][2]=='NULL':
+                    statelist[i][6] = statelist[i][6]+timetick2-timetick1
+                elif statelist[i][4]=='OnShift' and statelist[i][2]!=xml2[j][2]:
+                    deltaTime = statelist[i][6]+timetick2-timetick1-int(xml2[j][3])
+                    if statelist[i][2]=='Ready':
+                        statelist[i][7] = statelist[i][7]+deltaTime
+                    elif statelist[i][2]=='Talking':
+                        statelist[i][6] = statelist[i][6]+deltaTime
+                    elif statelist[i][2]=='Work Ready':
+                        statelist[i][8] = statelist[i][8]+deltaTime
+                    elif statelist[i][2]=='Not Ready':
+                        statelist[i][9] = statelist[i][9]+deltaTime
+            
+            statelist[i][2] = xml2[j][2]
+            statelist[i][3] = xml2[j][3]
+            statelist[i][6] = int(statelist[i][3])
+            statelist[i][4]=xml2[j][4]
             #State
             if statelist[i][4]=='OnShift':
                 if statelist[i][2]=='Ready':
@@ -81,29 +99,31 @@ while True:
 
         with open('./StateLog/'+ticks+'.txt', 'w') as f:
             for item in statelist:
-                f.writelines('|'+item[0].ljust(7,' '))  #No.
-                f.writelines('|'+item[1].ljust(17,' ')) #Name
-                f.writelines('|'+item[2].ljust(10,' ')) #ifReady
-                f.writelines('|'+item[3].ljust(5,' '))  #TimeInState
-                f.writelines('|'+item[4].ljust(8,' '))  #ifOnShift
-                f.writelines('|'+item[5].ljust(8,' ')) #State
-                f.writelines('|'+item[6].ljust(5,' '))  #FreeTime
-                f.writelines('|'+item[6].ljust(5,' '))  #BusyTime
-                f.writelines('|'+item[6].ljust(5,' '))  #AwayTime
+                f.writelines('|'+item[0].ljust(7,' '))                  #No.
+                f.writelines('|'+item[1].ljust(17,' '))                 #Name
+                f.writelines('|'+item[2].ljust(10,' '))                 #ifReady
+                f.writelines('|'+item[3].ljust(5,' '))                  #TimeInState
+                f.writelines('|'+item[4].ljust(8,' '))                  #ifOnShift
+                f.writelines('|'+item[5].ljust(8,' '))                  #State
+                f.writelines('|'+str(item[6]).ljust(5,' '))             #LastingTime
+                f.writelines('|'+str(item[7]).ljust(5,' '))             #FreeTime
+                f.writelines('|'+str(item[8]).ljust(5,' '))             #BusyTime
+                f.writelines('|'+str(item[9]).ljust(5,' '))             #AwayTime
                 f.writelines('\n')
             f.close()
 
         with open('./StateLog/Current.txt', 'w') as f:
             for item in statelist:
-                f.writelines('|'+item[0].ljust(7,' '))  #No.
-                f.writelines('|'+item[1].ljust(17,' ')) #Name
-                f.writelines('|'+item[2].ljust(10,' ')) #ifReady
-                f.writelines('|'+item[3].ljust(5,' '))  #TimeInState
-                f.writelines('|'+item[4].ljust(8,' '))  #ifOnShift
-                f.writelines('|'+item[5].ljust(8,' ')) #State
-                f.writelines('|'+item[6].ljust(5,' '))  #FreeTime
-                f.writelines('|'+item[6].ljust(5,' '))  #BusyTime
-                f.writelines('|'+item[6].ljust(5,' '))  #AwayTime
+                f.writelines('|'+item[0].ljust(7,' '))              #No.
+                f.writelines('|'+item[1].ljust(17,' '))             #Name
+                f.writelines('|'+item[2].ljust(10,' '))             #ifReady
+                f.writelines('|'+item[3].ljust(5,' '))              #TimeInState
+                f.writelines('|'+item[4].ljust(8,' '))              #ifOnShift
+                f.writelines('|'+item[5].ljust(8,' '))              #State
+                f.writelines('|'+str(item[6]).ljust(5,' '))         #LastingTime
+                f.writelines('|'+str(item[7]).ljust(5,' '))         #FreeTime
+                f.writelines('|'+str(item[8]).ljust(5,' '))         #BusyTime
+                f.writelines('|'+str(item[9]).ljust(5,' '))         #AwayTime
                 f.writelines('\n')
             f.close()
 
