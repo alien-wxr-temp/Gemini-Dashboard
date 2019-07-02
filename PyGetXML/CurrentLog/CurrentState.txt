@@ -1,27 +1,28 @@
-|7023745|Ayden Foo        |Ready     |559  |OnShift |Free    |559  |0    |0    |0    
-|7023132|Carmen Lai       |Ready     |603  |OnShift |Free    |603  |0    |0    |0    
-|7023178|Chun Way Yap     |Not Ready |4363 |OffShift|Offline |4363 |0    |0    |0    
-|7023120|HaiQiang Yuan    |          |18000|OffShift|Offline |18000|0    |0    |0    
-|7023190|Hailong Liu      |          |18000|OffShift|Offline |18000|0    |0    |0    
-|7023086|Jia Sheng Soo Hoe|Ready     |1409 |OnShift |Free    |1409 |0    |0    |0    
-|7023106|Jixi Su          |Ready     |6791 |OffShift|Offline |6791 |0    |0    |0    
-|7023155|Lei Xu           |          |18000|OffShift|Offline |18000|0    |0    |0    
-|7023181|Liming Zhang     |          |18000|OffShift|Offline |18000|0    |0    |0    
-|7023048|Runsheng Zhao    |          |18000|OnShift |ErrState|18000|0    |0    |0    
-|7023168|Shaopeng Xu      |          |18000|OffShift|Offline |18000|0    |0    |0    
-|7023134|Xiaoya Xie       |          |18000|OffShift|Offline |18000|0    |0    |0    
-|7023185|Xin Chen         |          |18000|OffShift|Offline |18000|0    |0    |0    
-|7023130|Xing Heng        |          |18000|OffShift|Offline |18000|0    |0    |0    
-|7023167|Yanbin Li        |Ready     |1357 |OffShift|Offline |1357 |0    |0    |0    
-|7023184|Yaoming Ren      |          |18000|OffShift|Offline |18000|0    |0    |0    
-|7023177|Yi Huang Loy     |Ready     |37   |OffShift|Offline |37   |0    |0    |0    
-|7023186|Yi Xu            |          |18000|OffShift|Offline |18000|0    |0    |0    
-|7022543|Yibai Zhao       |          |18000|OffShift|Offline |18000|0    |0    |0    
-|7023052|Yunfeng Qi       |Ready     |663  |OnShift |Free    |663  |0    |0    |0    
-|7023047|Yuqi Gu          |          |18000|OffShift|Offline |18000|0    |0    |0    
-|7023166|Yuxuan Xu        |          |18000|OffShift|Offline |18000|0    |0    |0    
-|7023082|Zhaoyong Wu      |          |18000|OnShift |ErrState|18000|0    |0    |0    
-|7023187|Zhenyang Gao     |          |18000|OnShift |ErrState|18000|0    |0    |0    
-|7023169|Zhenyu Gu        |Ready     |331  |OnShift |Free    |331  |0    |0    |0    
-|7022313|Zhi Yang Ong     |Not Ready |879  |OffShift|Offline |879  |0    |0    |0    
-|7023112|Ziheng Zhang     |          |18000|OffShift|Offline |18000|0    |0    |0    
+2019/07/02 - 13:17:09
+|7023745|Ayden Foo        |Ready     |770  |OnShift |Free    |770  |0    |0    |0    
+|7023132|Carmen Lai       |Ready     |814  |OnShift |Free    |814  |0    |0    |0    
+|7023178|Chun Way Yap     |Not Ready |4574 |OffShift|Offline |4574 |0    |0    |0    
+|7023120|HaiQiang Yuan    |Ready     |18000|OffShift|Offline |18000|0    |0    |0    
+|7023190|Hailong Liu      |Logged Off|18000|OffShift|Offline |18000|0    |0    |0    
+|7023086|Jia Sheng Soo Hoe|Ready     |1620 |OnShift |Free    |1620 |0    |0    |0    
+|7023106|Jixi Su          |Ready     |7002 |OffShift|Offline |7002 |0    |0    |0    
+|7023155|Lei Xu           |Logged Off|18000|OffShift|Offline |18000|0    |0    |0    
+|7023181|Liming Zhang     |Not Ready |18000|OffShift|Offline |18000|0    |0    |0    
+|7023048|Runsheng Zhao    |Logged Off|18000|OnShift |ErrState|18000|0    |0    |0    
+|7023168|Shaopeng Xu      |Not Ready |18000|OffShift|Offline |18000|0    |0    |0    
+|7023134|Xiaoya Xie       |Not Ready |18000|OffShift|Offline |18000|0    |0    |0    
+|7023185|Xin Chen         |Logged Off|18000|OffShift|Offline |18000|0    |0    |0    
+|7023130|Xing Heng        |Logged Off|18000|OffShift|Offline |18000|0    |0    |0    
+|7023167|Yanbin Li        |Ready     |1568 |OffShift|Offline |1568 |0    |0    |0    
+|7023184|Yaoming Ren      |Not Ready |18000|OffShift|Offline |18000|0    |0    |0    
+|7023177|Yi Huang Loy     |Ready     |248  |OffShift|Offline |248  |0    |0    |0    
+|7023186|Yi Xu            |Logged Off|18000|OffShift|Offline |18000|0    |0    |0    
+|7022543|Yibai Zhao       |Logged Off|18000|OffShift|Offline |18000|0    |0    |0    
+|7023052|Yunfeng Qi       |Ready     |874  |OnShift |Free    |874  |0    |0    |0    
+|7023047|Yuqi Gu          |Not Ready |18000|OffShift|Offline |18000|0    |0    |0    
+|7023166|Yuxuan Xu        |Not Ready |18000|OffShift|Offline |18000|0    |0    |0    
+|7023082|Zhaoyong Wu      |Logged Off|18000|OnShift |ErrState|18000|0    |0    |0    
+|7023187|Zhenyang Gao     |Logged Off|18000|OnShift |ErrState|18000|0    |0    |0    
+|7023169|Zhenyu Gu        |Ready     |542  |OnShift |Free    |542  |0    |0    |0    
+|7022313|Zhi Yang Ong     |Not Ready |1090 |OffShift|Offline |1090 |0    |0    |0    
+|7023112|Ziheng Zhang     |Logged Off|18000|OffShift|Offline |18000|0    |0    |0    

@@ -59,6 +59,7 @@ while True:
             #Time Calculating
             if xml2[j][3]=='NULL' or int(xml2[j][3])>=18000:                            # 18000s=5h
                 xml2[j][3] = '18000'
+                statelist[i][2] = xml2[j][2]
                 statelist[i][3] = xml2[j][3]
                 statelist[i][6] = int(statelist[i][3])
             else:
@@ -107,22 +108,8 @@ while True:
                 statelist[i][5]='Offline'
             i=i+1
 
-        with open('./StateLog/'+ticks+'.txt', 'w') as f:
-            for item in statelist:
-                f.writelines('|'+item[0].ljust(7,' '))                  #No.
-                f.writelines('|'+item[1].ljust(17,' '))                 #Name
-                f.writelines('|'+item[2].ljust(10,' '))                 #ifReady
-                f.writelines('|'+item[3].ljust(5,' '))                  #TimeInState
-                f.writelines('|'+item[4].ljust(8,' '))                  #ifOnShift
-                f.writelines('|'+item[5].ljust(8,' '))                  #State
-                f.writelines('|'+str(item[6]).ljust(5,' '))             #LastingTime
-                f.writelines('|'+str(item[7]).ljust(5,' '))             #FreeTime
-                f.writelines('|'+str(item[8]).ljust(5,' '))             #BusyTime
-                f.writelines('|'+str(item[9]).ljust(5,' '))             #AwayTime
-                f.writelines('\n')
-            f.close()
-
         with open('./CurrentLog/CurrentState.txt', 'w') as f:
+            f.writelines(time.strftime("%Y/%m/%d - %H:%M:%S", time.localtime())+'\n')
             for item in statelist:
                 f.writelines('|'+item[0].ljust(7,' '))              #No.
                 f.writelines('|'+item[1].ljust(17,' '))             #Name
