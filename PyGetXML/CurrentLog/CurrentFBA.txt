@@ -1,9 +1,10 @@
-2019/07/02 - 14:22:15
+2019/07/02 - 14:37:15
 Free AE: 3 
     Carmen Lai
-    Yunfeng Qi
+    Jia Sheng Soo Hoe
     Zhenyu Gu
 
-Busy AE: 0 
+Busy AE: 1 
+    Yunfeng Qi
 
-Away AE: 2 
+Away AE: 1 

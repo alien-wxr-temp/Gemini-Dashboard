@@ -117,17 +117,19 @@ while True:
 
         with open('./CurrentLog/CurrentState.txt', 'w') as f:
             f.writelines(time.strftime("%Y/%m/%d - %H:%M:%S", time.localtime())+'\n')
+            f.writelines('|Numbers |AE Name           |oldState   |oTime |ifShift  |newState |nTime |freeT |BusyT |AwayT \n')
+            f.writelines('_'*94+'\n')
             for item in statelist:
-                f.writelines('|'+item[0].ljust(7,' '))              #No.
-                f.writelines('|'+item[1].ljust(17,' '))             #Name
-                f.writelines('|'+item[2].ljust(10,' '))             #ifReady
-                f.writelines('|'+item[3].ljust(5,' '))              #TimeInState
-                f.writelines('|'+item[4].ljust(8,' '))              #ifOnShift
-                f.writelines('|'+item[5].ljust(8,' '))              #State
-                f.writelines('|'+str(item[6]).ljust(5,' '))         #LastingTime
-                f.writelines('|'+str(item[7]).ljust(5,' '))         #FreeTime
-                f.writelines('|'+str(item[8]).ljust(5,' '))         #BusyTime
-                f.writelines('|'+str(item[9]).ljust(5,' '))         #AwayTime
+                f.writelines('|'+item[0].ljust(8,' '))              #No.
+                f.writelines('|'+item[1].ljust(18,' '))             #Name
+                f.writelines('|'+item[2].ljust(11,' '))             #ifReady
+                f.writelines('|'+item[3].ljust(6,' '))              #TimeInState
+                f.writelines('|'+item[4].ljust(9,' '))              #ifOnShift
+                f.writelines('|'+item[5].ljust(9,' '))              #State
+                f.writelines('|'+str(item[6]).ljust(6,' '))         #LastingTime
+                f.writelines('|'+str(item[7]).ljust(6,' '))         #FreeTime
+                f.writelines('|'+str(item[8]).ljust(6,' '))         #BusyTime
+                f.writelines('|'+str(item[9]).ljust(6,' '))         #AwayTime
                 f.writelines('\n')
             f.close()
 
