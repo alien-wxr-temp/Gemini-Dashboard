@@ -59,9 +59,11 @@ while True:
             #Time Calculating
             if xml2[j][3]=='NULL' or int(xml2[j][3])>=18000:                            # 18000s=5h
                 xml2[j][3] = '18000'
+                statelist[i][3] = xml2[j][3]
                 statelist[i][6] = int(statelist[i][3])
             else:
                 if xml2[j][2]=='NULL':                                                  # capture an intermediate state
+                    statelist[i][3] = xml2[j][3]
                     statelist[i][6] = statelist[i][6]+timetick2-timetick1
                 elif statelist[i][4]=='OnShift' and statelist[i][2]!=xml2[j][2]:
                     deltaTime = statelist[i][6]+timetick2-timetick1-int(xml2[j][3])
@@ -79,10 +81,11 @@ while True:
                     else:
                         statelist[i][6] = int(statelist[i][3])
                     statelist[i][2] = xml2[j][2]
+                    statelist[i][3] = xml2[j][3]
                 else:
                     statelist[i][2] = xml2[j][2]
+                    statelist[i][3] = xml2[j][3]
                     statelist[i][6] = int(statelist[i][3])
-            statelist[i][3] = xml2[j][3]
             statelist[i][4] = xml2[j][4]
             #State
             if statelist[i][4]=='OnShift':
@@ -137,7 +140,7 @@ while True:
         with open('./CurrentLog/CurrentFBA.txt', 'w') as f:
             f.writelines(time.strftime("%Y/%m/%d - %H:%M:%S", time.localtime())+'\n')
             f.writelines('Free AE: '+str(freeNum)+' \n')
-            print(time.strftime("%Y/%m/%d - %H:%M:%S", time.localtime())+'\n')
+            print(time.strftime("%Y/%m/%d - %H:%M:%S", time.localtime()))
             print('Free AE: '+str(freeNum))
             for item in freeList:
                 f.writelines('    '+item)
