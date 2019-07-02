@@ -56,27 +56,34 @@ while True:
                 xml2[j][4] = 'OnShift'
             else:
                 xml2[j][4] = 'OffShift'
-
-            if xml2[j][3]=='NULL' or int(xml2[j][3])>=18000:
-                xml2[j][3]='18000'
+            #Time Calculating
+            if xml2[j][3]=='NULL' or int(xml2[j][3])>=18000:                            # 18000s=5h
+                xml2[j][3] = '18000'
+                statelist[i][6] = int(statelist[i][3])
             else:
-                if xml2[j][2]=='NULL':
+                if xml2[j][2]=='NULL':                                                  # capture an intermediate state
                     statelist[i][6] = statelist[i][6]+timetick2-timetick1
                 elif statelist[i][4]=='OnShift' and statelist[i][2]!=xml2[j][2]:
                     deltaTime = statelist[i][6]+timetick2-timetick1-int(xml2[j][3])
                     if statelist[i][2]=='Ready':
                         statelist[i][7] = statelist[i][7]+deltaTime
+                        statelist[i][6] = int(statelist[i][3])
                     elif statelist[i][2]=='Talking':
-                        statelist[i][6] = statelist[i][6]+deltaTime
+                        statelist[i][6] = deltaTime
                     elif statelist[i][2]=='Work Ready':
                         statelist[i][8] = statelist[i][8]+deltaTime
+                        statelist[i][6] = int(statelist[i][3])
                     elif statelist[i][2]=='Not Ready':
                         statelist[i][9] = statelist[i][9]+deltaTime
-            
-            statelist[i][2] = xml2[j][2]
+                        statelist[i][6] = int(statelist[i][3])
+                    else:
+                        statelist[i][6] = int(statelist[i][3])
+                    statelist[i][2] = xml2[j][2]
+                else:
+                    statelist[i][2] = xml2[j][2]
+                    statelist[i][6] = int(statelist[i][3])
             statelist[i][3] = xml2[j][3]
-            statelist[i][6] = int(statelist[i][3])
-            statelist[i][4]=xml2[j][4]
+            statelist[i][4] = xml2[j][4]
             #State
             if statelist[i][4]=='OnShift':
                 if statelist[i][2]=='Ready':
@@ -112,7 +119,7 @@ while True:
                 f.writelines('\n')
             f.close()
 
-        with open('./StateLog/Current.txt', 'w') as f:
+        with open('./CurrentLog/CurrentState.txt', 'w') as f:
             for item in statelist:
                 f.writelines('|'+item[0].ljust(7,' '))              #No.
                 f.writelines('|'+item[1].ljust(17,' '))             #Name
@@ -127,9 +134,10 @@ while True:
                 f.writelines('\n')
             f.close()
 
-        with open('./ABLog/Current.txt', 'w') as f:
+        with open('./CurrentLog/CurrentFBA.txt', 'w') as f:
             f.writelines(time.strftime("%Y/%m/%d - %H:%M:%S", time.localtime())+'\n')
             f.writelines('Free AE: '+str(freeNum)+' \n')
+            print(time.strftime("%Y/%m/%d - %H:%M:%S", time.localtime())+'\n')
             print('Free AE: '+str(freeNum))
             for item in freeList:
                 f.writelines('    '+item)
@@ -149,7 +157,7 @@ while True:
         time.sleep(inc)
     except:
         print("exception and restart")
-        with open('./Exception/errorLog.txt','a') as f:
+        with open('./CurrentLog/errorLog.txt','a') as f:
             f.write(time.strftime("%Y/%m/%d - %H:%M:%S", time.localtime())+'\n')
             f.close()
         time.sleep(inc/3)
