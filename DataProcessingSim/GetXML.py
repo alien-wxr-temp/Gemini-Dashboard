@@ -11,7 +11,7 @@ timetick1 = int(time.time())
 timetick2 = int(time.time())
 with open('./nameList.txt', 'r') as f:
     for line in f:
-        statelist.append(['',line.strip(),'','','','',0,0,0,0])
+        statelist.append(['',line.strip(),'','',''])
 
 inc = 27
 while True:
@@ -33,7 +33,7 @@ while True:
 
         for row_tag in soup.report.children:
             j=0
-            single = ['','','','','','','']
+            single = ['','','','','']
             for col_tag in row_tag.children:
                 if (col_tag['name']=='AgentLogin' or col_tag['name']=='FullName' or col_tag['name']=='AgentState' or col_tag['name']=='TimeInState' or col_tag['name']=='OnShift'):
                     if (len(col_tag.contents) != 0):
@@ -50,98 +50,42 @@ while True:
         while (i<len(statelist)):
             while (j<len(xml2) and xml2[j][1]!=statelist[i][1]):
                 j=j+1
-            statelist[i][0]=xml2[j][0]
-            #OnShift or OffShift
+            
+            statelist[i][0] = xml2[j][0]                                    #No.
+            if xml2[j][2]=='NULL':                                          # capture an intermediate state
+                statelist[i][2] = statelist[i][2]                           #AgentState
+                statelist[i][3] = statelist[i][3]+timetick2-timetick1       #TimeInState
+            else:
+                statelist[i][2] = xml2[j][2]                                #AgentState
+                statelist[i][3] = xml2[j][3]                                #TimeInState
             if (xml2[j][4]=='true'):
-                xml2[j][4] = 'OnShift'
+                statelist[i][4] = 'OnShift'                                 #OnShift
             else:
-                xml2[j][4] = 'OffShift'
-            #Time Calculating
-            if xml2[j][3]=='NULL' or int(xml2[j][3])>=18000:                            # 18000s=5h
-                xml2[j][3] = '18000'
-                statelist[i][2] = xml2[j][2]
-                statelist[i][3] = xml2[j][3]
-                statelist[i][6] = int(statelist[i][3])
-            else:
-                if xml2[j][2]=='NULL':                                                  # capture an intermediate state
-                    statelist[i][3] = xml2[j][3]
-                    statelist[i][6] = statelist[i][6]+timetick2-timetick1
-                elif statelist[i][4]=='OnShift' and statelist[i][2]!=xml2[j][2]:
-                    deltaTime = statelist[i][6]+timetick2-timetick1-int(xml2[j][3])
-                    if statelist[i][2]=='Ready':
-                        statelist[i][7] = statelist[i][7]+deltaTime
-                        statelist[i][3] = xml2[j][3]
-                        statelist[i][6] = int(statelist[i][3])
-                    elif statelist[i][2]=='Talking':
-                        statelist[i][6] = deltaTime+int(xml2[j][3])
-                        statelist[i][3] = xml2[j][3]
-                    elif statelist[i][2]=='Work Ready':
-                        statelist[i][8] = statelist[i][8]+deltaTime
-                        statelist[i][3] = xml2[j][3]
-                        statelist[i][6] = int(statelist[i][3])
-                    elif statelist[i][2]=='Not Ready':
-                        statelist[i][9] = statelist[i][9]+deltaTime
-                        statelist[i][3] = xml2[j][3]
-                        statelist[i][6] = int(statelist[i][3])
-                    else:
-                        statelist[i][3] = xml2[j][3]
-                        statelist[i][6] = int(statelist[i][3])
-                    statelist[i][2] = xml2[j][2]
-                elif statelist[i][2]=='Work Ready':
-                    statelist[i][6] = statelist[i][6]+int(xml2[j][3])-int(statelist[i][3])
-                    statelist[i][3] = xml2[j][3]
-                else:
-                    statelist[i][2] = xml2[j][2]
-                    statelist[i][3] = xml2[j][3]
-                    statelist[i][6] = int(statelist[i][3])
-            statelist[i][4] = xml2[j][4]
-            #State
-            if statelist[i][4]=='OnShift':
-                if statelist[i][2]=='Ready':
-                    statelist[i][5]='Free'
-                    freeNum = freeNum+1
-                    freeList.append(statelist[i][1])
-                elif statelist[i][2]=='Talking' or statelist[i][2]=='Work Ready':
-                    statelist[i][5]='Busy'
-                    busyNum = busyNum+1
-                    busyList.append(statelist[i][1])
-                elif statelist[i][2]=='Not Ready':
-                    statelist[i][5]='Away'
-                    awayNum = awayNum+1
-                    awayList.append(statelist[i][1])
-                else:
-                    statelist[i][5]='ErrState'
-            else:
-                statelist[i][5]='Offline'
+                statelist[i][4] = 'OffShift'                                #OffShift
             i=i+1
 
         with open('./CurrentLog/CurrentState.txt', 'w') as f:
             f.writelines(time.strftime("%Y/%m/%d - %H:%M:%S", time.localtime())+'\n')
-            f.writelines('|Numbers |AE Name           |oldState   |oTime |ifShift  |newState |nTime |freeT |BusyT |AwayT \n')
-            f.writelines('_'*94+'\n')
+            f.writelines('|Numbers |AE Name           |oldState   |oTime |ifShift  \n')
+            f.writelines('_'*59+'\n')
             for item in statelist:
-                f.writelines('|'+item[0].ljust(8,' '))              #No.
-                f.writelines('|'+item[1].ljust(18,' '))             #Name
-                f.writelines('|'+item[2].ljust(11,' '))             #ifReady
-                f.writelines('|'+item[3].ljust(6,' '))              #TimeInState
-                f.writelines('|'+item[4].ljust(9,' '))              #ifOnShift
-                f.writelines('|'+item[5].ljust(9,' '))              #State
-                f.writelines('|'+str(item[6]).ljust(6,' '))         #LastingTime
-                f.writelines('|'+str(item[7]).ljust(6,' '))         #FreeTime
-                f.writelines('|'+str(item[8]).ljust(6,' '))         #BusyTime
-                f.writelines('|'+str(item[9]).ljust(6,' '))         #AwayTime
+                f.writelines('|'+item[0].ljust(8,' '))                      #No.
+                f.writelines('|'+item[1].ljust(18,' '))                     #Name
+                f.writelines('|'+item[2].ljust(11,' '))                     #ifReady
+                f.writelines('|'+item[3].ljust(6,' '))                      #TimeInState
+                f.writelines('|'+item[4].ljust(9,' '))                      #ifOnShift
                 f.writelines('\n')
             f.close()
 
         # for LabView
         with open('./data.txt', 'w') as f:
+            f.writelines(str(timetick2)+',')                                #TimeStamp
             for item in statelist:
-                f.writelines(str(item[7])+',')                      #FreeTime
-                f.writelines(str(item[8])+',')                      #BusyTime
-                f.writelines(str(item[9])+',')                      #AwayTime
-                f.writelines(item[0]+',')                           #No.
-                f.writelines(item[1]+',')                           #Name
-                f.writelines(item[5]+',')                           #State
+                f.writelines(item[0]+',')                                   #No.
+                f.writelines(item[1]+',')                                   #Name
+                f.writelines(item[2]+',')                                   #ifReady
+                f.writelines(item[3]+',')                                   #TimeInState
+                f.writelines(item[4]+',')                                   #ifOnShift
             f.close()
 
         time.sleep(inc)
