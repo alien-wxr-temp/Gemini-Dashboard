@@ -11,12 +11,15 @@ timetick1 = int(time.time())
 timetick2 = int(time.time())
 with open('./nameList.txt', 'r') as f:
     for line in f:
-        statelist.append(['',line.strip(),'','','','',0,0,0,0])
+        statelist.append(['',line.strip(),'','','','',0,0,0,0,0])
 
 inc = 27
+
+allTalks = 0            #All Talks
+
 while True:
     try:
-        xml = []        #origin xml data elements
+        xml = []        #Origin xml data elements
         freeList = []   #
         freeNum = 0     #
         busyList = []   #
@@ -56,8 +59,12 @@ while True:
                 xml2[j][4] = 'OnShift'
             else:
                 xml2[j][4] = 'OffShift'
+            #Talks Recording
+            if statelist[i][2]!='Talking' and xml2[j][2]=='Talking':
+                allTalks = allTalks+1
+                statelist[i][10] = statelist[i][10]+1
             #Time Calculating
-            if xml2[j][3]=='NULL' or int(xml2[j][3])>=18000:                            # 18000s=5h
+            if xml2[j][3]=='NULL' or int(xml2[j][3])>=18000:                            # 18000s=5h, time overflow
                 xml2[j][3] = '18000'
                 statelist[i][2] = xml2[j][2]
                 statelist[i][3] = xml2[j][3]
@@ -117,8 +124,8 @@ while True:
 
         with open('./CurrentLog/CurrentState.txt', 'w') as f:
             f.writelines(time.strftime("%Y/%m/%d - %H:%M:%S", time.localtime())+'\n')
-            f.writelines('|Numbers |AE Name           |oldState   |oTime |ifShift  |newState |nTime |freeT |BusyT |AwayT \n')
-            f.writelines('_'*94+'\n')
+            f.writelines('|Numbers |AE Name           |oldState   |oTime |ifShift  |newState |nTime |freeT |BusyT |AwayT |Talks \n')
+            f.writelines('_'*101+'\n')
             for item in statelist:
                 f.writelines('|'+item[0].ljust(8,' '))              #No.
                 f.writelines('|'+item[1].ljust(18,' '))             #Name
@@ -130,43 +137,28 @@ while True:
                 f.writelines('|'+str(item[7]).ljust(6,' '))         #FreeTime
                 f.writelines('|'+str(item[8]).ljust(6,' '))         #BusyTime
                 f.writelines('|'+str(item[9]).ljust(6,' '))         #AwayTime
+                f.writelines('|'+str(item[10]).ljust(6,' '))        #TalksCount
                 f.writelines('\n')
             f.close()
 
         # for LabView
         with open('./data.txt', 'w') as f:
+            f.writelines(str(freeNum)+',')                          #FreeNum
+            f.writelines(str(busyNum)+',')                          #BusyNum
+            f.writelines(str(awayNum)+',')                          #AwayNum
+            f.writelines(str(allTalks)+',')                         #AllTalks
             for item in statelist:
                 f.writelines(str(item[7])+',')                      #FreeTime
                 f.writelines(str(item[8])+',')                      #BusyTime
                 f.writelines(str(item[9])+',')                      #AwayTime
                 f.writelines(item[0]+',')                           #No.
                 f.writelines(item[1]+',')                           #Name
-               #f.writelines(item[2]+' \n')                         #ifReady
-               #f.writelines(item[3]+' \n')                         #TimeInState
-               #f.writelines(item[4]+' \n')                         #ifOnShift
+               #f.writelines(item[2]+',')                           #ifReady
+               #f.writelines(item[3]+',')                           #TimeInState
+               #f.writelines(item[4]+',')                           #ifOnShift
                 f.writelines(item[5]+',')                           #State
-               #f.writelines(str(item[6])+' \n')                    #LastingTime
-                
-            f.close()
-
-        with open('./CurrentLog/CurrentFBA.txt', 'w') as f:
-            f.writelines(time.strftime("%Y/%m/%d - %H:%M:%S", time.localtime())+'\n')
-            f.writelines('Free AE: '+str(freeNum)+' \n')
-            print(time.strftime("%Y/%m/%d - %H:%M:%S", time.localtime()))
-            print('Free AE: '+str(freeNum))
-            for item in freeList:
-                f.writelines('    '+item)
-                print('    '+item)
-                f.writelines('\n')
-            f.writelines('\n')
-            f.writelines('Busy AE: '+str(busyNum)+' \n')
-            print('\nBusy AE: '+str(busyNum))
-            for item in busyList:
-                 f.writelines('    '+item)
-                 print('    '+item)
-                 f.writelines('\n')
-            f.writelines('\n')
-            f.writelines('Away AE: '+str(awayNum)+' \n')
+               #f.writelines(str(item[6])+',')                      #LastingTime
+                f.writelines(str(item[10])+',')                     #TalksCount
             f.close()
 
         time.sleep(inc)

@@ -141,32 +141,7 @@ while True:
                 f.writelines(str(item[9])+',')                      #AwayTime
                 f.writelines(item[0]+',')                           #No.
                 f.writelines(item[1]+',')                           #Name
-               #f.writelines(item[2]+' \n')                         #ifReady
-               #f.writelines(item[3]+' \n')                         #TimeInState
-               #f.writelines(item[4]+' \n')                         #ifOnShift
                 f.writelines(item[5]+',')                           #State
-               #f.writelines(str(item[6])+' \n')                    #LastingTime
-                
-            f.close()
-
-        with open('./CurrentLog/CurrentFBA.txt', 'w') as f:
-            f.writelines(time.strftime("%Y/%m/%d - %H:%M:%S", time.localtime())+'\n')
-            f.writelines('Free AE: '+str(freeNum)+' \n')
-            print(time.strftime("%Y/%m/%d - %H:%M:%S", time.localtime()))
-            print('Free AE: '+str(freeNum))
-            for item in freeList:
-                f.writelines('    '+item)
-                print('    '+item)
-                f.writelines('\n')
-            f.writelines('\n')
-            f.writelines('Busy AE: '+str(busyNum)+' \n')
-            print('\nBusy AE: '+str(busyNum))
-            for item in busyList:
-                 f.writelines('    '+item)
-                 print('    '+item)
-                 f.writelines('\n')
-            f.writelines('\n')
-            f.writelines('Away AE: '+str(awayNum)+' \n')
             f.close()
 
         time.sleep(inc)
