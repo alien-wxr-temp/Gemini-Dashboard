@@ -143,21 +143,18 @@ while True:
 
         # for LabView
         with open('./data.txt', 'w') as f:
+            f.writelines(str(timetick2)+',')                        #Timetick
             f.writelines(str(freeNum)+',')                          #FreeNum
             f.writelines(str(busyNum)+',')                          #BusyNum
             f.writelines(str(awayNum)+',')                          #AwayNum
             f.writelines(str(allTalks)+',')                         #AllTalks
             for item in statelist:
                 f.writelines(str(item[7])+',')                      #FreeTime
-                f.writelines(str(item[8])+',')                      #BusyTime
+               #f.writelines(str(item[8])+',')                      #BusyTime
                 f.writelines(str(item[9])+',')                      #AwayTime
                 f.writelines(item[0]+',')                           #No.
                 f.writelines(item[1]+',')                           #Name
-               #f.writelines(item[2]+',')                           #ifReady
-               #f.writelines(item[3]+',')                           #TimeInState
-               #f.writelines(item[4]+',')                           #ifOnShift
                 f.writelines(item[5]+',')                           #State
-               #f.writelines(str(item[6])+',')                      #LastingTime
                 f.writelines(str(item[10])+',')                     #TalksCount
             f.close()
 

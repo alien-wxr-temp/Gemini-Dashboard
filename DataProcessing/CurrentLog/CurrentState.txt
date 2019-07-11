@@ -1,29 +1,30 @@
-2019/07/06 - 03:02:49
+2019/07/11 - 12:42:17
 |Numbers |AE Name           |oldState   |oTime |ifShift  |newState |nTime |freeT |BusyT |AwayT 
 ______________________________________________________________________________________________
-|7023132 |Carmen Lai        |Logged Off |18000 |OffShift |Offline  |18000 |0     |0     |0     
-|7023178 |Chun Way Yap      |Not Ready  |18000 |OffShift |Offline  |18000 |0     |0     |0     
+|7023745 |Ayden Foo         |Not Ready  |2966  |OnShift  |Away     |2966  |0     |0     |0     
+|7023132 |Carmen Lai        |Not Ready  |2888  |OffShift |Offline  |2888  |0     |0     |0     
+|7023178 |Chun Way Yap      |Not Ready  |10096 |OffShift |Offline  |10096 |0     |0     |0     
 |7023120 |HaiQiang Yuan     |Not Ready  |18000 |OffShift |Offline  |18000 |0     |0     |0     
 |7023190 |Hailong Liu       |Logged Off |18000 |OffShift |Offline  |18000 |0     |0     |0     
-|7023086 |Jia Sheng Soo Hoe |Ready      |18000 |OffShift |Offline  |18000 |0     |0     |0     
-|7023106 |Jixi Su           |Not Ready  |18000 |OnShift  |Away     |18000 |15381 |1249  |1135  
-|7023155 |Lei Xu            |Not Ready  |18000 |OnShift  |Away     |18000 |10655 |3379  |396   
+|7023086 |Jia Sheng Soo Hoe |Not Ready  |9924  |OffShift |Offline  |9924  |0     |0     |0     
+|7023106 |Jixi Su           |Not Ready  |18000 |OnShift  |Away     |18000 |0     |0     |0     
+|7023155 |Lei Xu            |Ready      |10618 |OffShift |Offline  |10618 |0     |0     |0     
 |7023181 |Liming Zhang      |Not Ready  |18000 |OffShift |Offline  |18000 |0     |0     |0     
-|7023048 |Runsheng Zhao     |Not Ready  |18000 |OffShift |Offline  |18000 |0     |0     |0     
-|7023168 |Shaopeng Xu       |Not Ready  |18000 |OffShift |Offline  |18000 |10168 |5023  |0     
-|7023134 |Xiaoya Xie        |Not Ready  |18000 |OffShift |Offline  |18000 |0     |0     |0     
+|7023048 |Runsheng Zhao     |Not Ready  |6672  |OnShift  |Away     |6672  |0     |0     |0     
+|7023168 |Shaopeng Xu       |Logged Off |18000 |OffShift |Offline  |18000 |0     |0     |0     
+|7023134 |Xiaoya Xie        |Logged Off |18000 |OffShift |Offline  |18000 |0     |0     |0     
 |7023185 |Xin Chen          |Logged Off |18000 |OffShift |Offline  |18000 |0     |0     |0     
 |7023130 |Xing Heng         |Logged Off |18000 |OffShift |Offline  |18000 |0     |0     |0     
-|7023167 |Yanbin Li         |Logged Off |18000 |OffShift |Offline  |18000 |0     |0     |0     
+|7023167 |Yanbin Li         |Ready      |6988  |OffShift |Offline  |6988  |0     |0     |0     
 |7023184 |Yaoming Ren       |Not Ready  |18000 |OffShift |Offline  |18000 |0     |0     |0     
-|7023177 |Yi Huang Loy      |Not Ready  |18000 |OffShift |Offline  |18000 |0     |0     |0     
+|7023177 |Yi Huang Loy      |Ready      |11140 |OffShift |Offline  |11140 |0     |0     |0     
 |7023186 |Yi Xu             |Logged Off |18000 |OffShift |Offline  |18000 |0     |0     |0     
 |7022543 |Yibai Zhao        |Logged Off |18000 |OffShift |Offline  |18000 |0     |0     |0     
-|7023052 |Yunfeng Qi        |Not Ready  |18000 |OffShift |Offline  |18000 |0     |0     |0     
+|7023052 |Yunfeng Qi        |Not Ready  |12638 |OffShift |Offline  |12638 |0     |0     |0     
 |7023047 |Yuqi Gu           |Logged Off |18000 |OffShift |Offline  |18000 |0     |0     |0     
-|7023166 |Yuxuan Xu         |Not Ready  |18000 |OffShift |Offline  |18000 |0     |0     |0     
+|7023166 |Yuxuan Xu         |Ready      |2374  |OffShift |Offline  |2374  |0     |0     |0     
 |7023082 |Zhaoyong Wu       |Logged Off |18000 |OnShift  |ErrState |18000 |0     |0     |0     
 |7023187 |Zhenyang Gao      |Logged Off |18000 |OnShift  |ErrState |18000 |0     |0     |0     
-|7023169 |Zhenyu Gu         |Ready      |18000 |OffShift |Offline  |18000 |0     |0     |5685  
-|7022313 |Zhi Yang Ong      |Logged Off |18000 |OffShift |Offline  |18000 |0     |0     |0     
+|7023169 |Zhenyu Gu         |Ready      |18000 |OffShift |Offline  |18000 |0     |0     |0     
+|7022313 |Zhi Yang Ong      |Not Ready  |10758 |OffShift |Offline  |10758 |0     |0     |0     
 |7023112 |Ziheng Zhang      |Logged Off |18000 |OffShift |Offline  |18000 |0     |0     |0     
