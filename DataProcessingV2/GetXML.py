@@ -76,18 +76,18 @@ while True:
                 elif statelist[i][4]=='OnShift' and statelist[i][2]!=xml2[j][2]:
                     deltaTime = statelist[i][6]+timetick2-timetick1-int(xml2[j][3])
                     if statelist[i][2]=='Ready':
-                        statelist[i][7] = statelist[i][7]+deltaTime
+                        statelist[i][7] = deltaTime
                         statelist[i][3] = xml2[j][3]
                         statelist[i][6] = int(statelist[i][3])
                     elif statelist[i][2]=='Talking':
                         statelist[i][6] = deltaTime+int(xml2[j][3])
                         statelist[i][3] = xml2[j][3]
                     elif statelist[i][2]=='Work Ready':
-                        statelist[i][8] = statelist[i][8]+deltaTime
+                        statelist[i][8] = deltaTime
                         statelist[i][3] = xml2[j][3]
                         statelist[i][6] = int(statelist[i][3])
                     elif statelist[i][2]=='Not Ready':
-                        statelist[i][9] = statelist[i][9]+deltaTime
+                        statelist[i][9] = deltaTime
                         statelist[i][3] = xml2[j][3]
                         statelist[i][6] = int(statelist[i][3])
                     else:
@@ -150,7 +150,7 @@ while True:
             f.writelines(str(allTalks)+',')                         #AllTalks
             for item in statelist:
                 f.writelines(str(item[7])+',')                      #FreeTime
-               #f.writelines(str(item[8])+',')                      #BusyTime
+                f.writelines(str(item[8])+',')                      #BusyTime
                 f.writelines(str(item[9])+',')                      #AwayTime
                 f.writelines(item[0]+',')                           #No.
                 f.writelines(item[1]+',')                           #Name
