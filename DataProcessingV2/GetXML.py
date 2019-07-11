@@ -149,9 +149,10 @@ while True:
             f.writelines(str(awayNum)+',')                          #AwayNum
             f.writelines(str(allTalks)+',')                         #AllTalks
             for item in statelist:
-                f.writelines(str(item[7])+',')                      #FreeTime
-                f.writelines(str(item[8])+',')                      #BusyTime
-                f.writelines(str(item[9])+',')                      #AwayTime
+                f.writelines(str(item[6])+',')                      #currentStateTime
+               #f.writelines(str(item[7])+',')                      #FreeTime
+               #f.writelines(str(item[8])+',')                      #BusyTime
+               #f.writelines(str(item[9])+',')                      #AwayTime
                 f.writelines(item[0]+',')                           #No.
                 f.writelines(item[1]+',')                           #Name
                 f.writelines(item[5]+',')                           #State
