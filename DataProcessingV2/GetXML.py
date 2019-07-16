@@ -60,7 +60,7 @@ while True:
             else:
                 xml2[j][4] = 'OffShift'
             #Talks Recording
-            if statelist[i][2]!='Talking' and xml2[j][2]=='Talking':
+            if statelist[i][2]=='Ready' and xml2[j][2]=='Talking' and statelist[i][4]=='OnShift' and xml2[j][4]=='OnShift':
                 allTalks = allTalks+1
                 statelist[i][10] = statelist[i][10]+1
             #Time Calculating
