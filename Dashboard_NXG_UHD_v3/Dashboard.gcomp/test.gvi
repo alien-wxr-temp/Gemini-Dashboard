@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SourceFile Checksum="128BFD0B6C92D4FAA01F2C89BECF5B868165C4272EBDC2AF5D6EA71D29EFF8D05BF02BE455C9F04ADDAABB6D18337518FE1D209EF6F9AEF2F52993C25DF80C97" Timestamp="1D534F6D2501848" xmlns="http://www.ni.com/PlatformFramework">
+	<SourceModelFeatureSet>
+		<ParsableNamespace AssemblyFileVersion="6.4.1.50844" FeatureSetName="LabVIEW Virtual Instrument" Name="http://www.ni.com/LabVIEW.VI" OldestCompatibleVersion="6.2.0.49152" Version="6.2.0.49152" />
+		<ParsableNamespace AssemblyFileVersion="6.4.1.50844" FeatureSetName="通用语言组件" Name="http://www.ni.com/MocCommon" OldestCompatibleVersion="6.2.0.49153" Version="6.2.0.49153" />
+		<ParsableNamespace AssemblyFileVersion="6.4.1.50844" FeatureSetName="编辑器" Name="http://www.ni.com/PanelCommon" OldestCompatibleVersion="6.1.0.0" Version="6.1.0.49152" />
+		<ParsableNamespace AssemblyFileVersion="6.4.1.50844" FeatureSetName="编辑器" Name="http://www.ni.com/PlatformFramework" OldestCompatibleVersion="6.2.0.49154" Version="6.2.0.49154" />
+		<ApplicationVersionInfo Build="6.4.1.50844" Name="LabVIEW NXG" Version="3.1.0" />
+	</SourceModelFeatureSet>
+	<VirtualInstrument Id="d857d0b5dbb4c9fb624b678c49c0703" xmlns="http://www.ni.com/LabVIEW.VI">
+		<Icon Id="17780ddb81f64b9b9506429d1ae3e2e1" ListViewIconCrop="0 0 40 40" xmlns="http://www.ni.com/PlatformFramework">
+			<IconPanel Height="[float]40" Id="3374c0db65d84981a163890c5b377393" Left="[float]0" MinHeight="[float]0" MinWidth="[float]0" PanelSizeMode="Resize" Top="[float]0" Width="[float]40">
+				<IconTemplate ClipMargin="[SMThickness]3,3,3,3" Height="[float]40" Id="cfee997214a148059179cd2ff7429ac3" Left="[float]0" TemplateName="[string]Gray" Top="[float]0" Width="[float]40">
+					<Rectangle Fill="[SMSolidColorBrush]#ff727272" Id="652a4a898abd4fedacbdb7f48cdded57" IsHitTestVisible="[bool]False" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" RadiusX="[float]4" RadiusY="[float]4" Top="[float]0" />
+					<Rectangle Fill="[SMSolidColorBrush]#ffe5e5e5" Id="78695aad7ced4bada8410e69359d92d2" IsHitTestVisible="[bool]False" Left="[float]0" Margin="[SMThickness]1,1,1,1" MinHeight="[float]1" MinWidth="[float]1" RadiusX="[float]2.5" RadiusY="[float]2.5" Stroke="[SMSolidColorBrush]#fff2f2f2" Top="[float]0" />
+					<FileNameText Attached="[bool]True" Height="[float]36" Id="58333df9d0954d91b28efe1d2b27d5ff" Left="[float]0" Margin="[SMThickness]2,2,2,2" SizeMode="[TextModelSizeMode]AutoFont" Text="[string]test" TextAlignment="[TextAlignment]Center" TextWrapping="[TextWrapping]Wrap" Top="[float]0" VerticalScrollBarVisibility="[ScrollBarVisibility]Hidden" Width="[float]36">
+						<FontSetting FontFamily="Verdana" FontSize="11.25" Id="5c729254f23b4c85b0cdced994ffe643" />
+					</FileNameText>
+				</IconTemplate>
+			</IconPanel>
+		</Icon>
+		<ConnectorPane Height="40" Id="8efb5db7f6e442dbb61c1cec8016d4ff" ListViewHeight="40" ListViewWidth="150" Width="40" xmlns="http://www.ni.com/PlatformFramework">
+			<ConnectorPaneTerminal />
+			<ConnectorPaneTerminal Hotspot="0 15" />
+			<ConnectorPaneTerminal Hotspot="0 25" />
+			<ConnectorPaneTerminal Hotspot="0 35" />
+			<ConnectorPaneTerminal Hotspot="15 0" />
+			<ConnectorPaneTerminal Hotspot="25 0" />
+			<ConnectorPaneTerminal Hotspot="40 5" />
+			<ConnectorPaneTerminal Hotspot="40 15" />
+			<ConnectorPaneTerminal Hotspot="40 25" />
+			<ConnectorPaneTerminal Hotspot="40 35" />
+			<ConnectorPaneTerminal Hotspot="15 40" />
+			<ConnectorPaneTerminal Hotspot="25 40" />
+		</ConnectorPane>
+		<DiagramUnplacedItems Id="bde5bb185d7e4bdf821ca54c3a14f2f9" xmlns="http://www.ni.com/MocCommon" />
+		<FrontPanelUnplacedItems Id="2f5ac5fd52e048f58f052f2f7f584eb8" Left="[float]0" MinHeight="[float]0" MinWidth="[float]0" PanelSizeMode="Fixed" Top="[float]0" />
+		<BlockDiagram Id="35d191b24450402581d705cf7747fa5e">
+			<WhileLoop Bounds="410 755 640 420" DiagramId="c9c0797754624e0597cca7b1fcaafd1e" Id="2803b99e488446f6993f0a78bcb7085b">
+				<LoopIteration Bounds="0 395 15 15" Id="a6d53278a8d445c5bd3dfd7ae978dd5e" />
+				<LoopCondition Bounds="360 195 15 15" Id="f88b540adff44314b523ca61ef8c1fcb" />
+				<Literal Bounds="315 150 25 15" DataType="Boolean" Id="8f83c310e4674e6c8edf43be13133894" Label="85f614fd8db04c3aae7e6819f613aaf2" xmlns="http://www.ni.com/MocCommon">
+					<p.Data>False</p.Data>
+					<BooleanBehavior />
+				</Literal>
+				<NodeLabel AttachedTo="8f83c310e4674e6c8edf43be13133894" Bounds="315 132 30 15" Id="85f614fd8db04c3aae7e6819f613aaf2" Visible="False" xmlns="http://www.ni.com/PlatformFramework">
+					<p.Text>停止</p.Text>
+				</NodeLabel>
+				<Wire Id="37532497e59e48699782330a52dd3e31" Joints="N(8f83c310e4674e6c8edf43be13133894:Out)|(340,155) h(10) v(45) N(f88b540adff44314b523ca61ef8c1fcb:Input)|(360,200)" xmlns="http://www.ni.com/PlatformFramework" />
+				<ControlReference Bounds="190 15 55 20" Id="cd422758554746adba4e732b1780675d" SourceControl="444dfee3b7a74822b307a3c7ffe7533d" />
+				<PropertyNode Bounds="265 15 75 45" Id="3d85fce106cd4050ad0fd1ca06798508" InstanceDataType=":DotNet:NationalInstruments.PanelRuntime.TextProxy, NationalInstruments.PanelRuntime" Mode="InstanceProperties" xmlns="http://www.ni.com/MocCommon">
+					<p.TypeDefinitionTargets xmlns="http://www.ni.com/PanelCommon">
+						<TypeDefinitionTarget TargetName="NI::G Core::Color Picker::Color.gtype" />
+					</p.TypeDefinitionTargets>
+					<PropertyItemTerminal Action="Write" DataType="String" Hotspot="0 25" Id="c0t0v" Path="Text" PathElementMemberKinds="Property" Usage="Required" />
+				</PropertyNode>
+				<Wire Id="69011e44976c481cb98d2c48eeb1e1cb" Joints="N(cd422758554746adba4e732b1780675d:control reference)|(245,20) N(3d85fce106cd4050ad0fd1ca06798508:instance in)|(265,20)" xmlns="http://www.ni.com/PlatformFramework" />
+				<GetCurrentTime Bounds="135 45 35 30" Id="f73a0cea1acf4631940a62d75fe9d927" />
+				<GetDateAndTimeString Bounds="200 35 35 30" Id="628561290c64401a380d7ac1cee263b" />
+				<Wire Id="7187fa484b4540f4b6c964cc79b1a37f" Joints="N(f73a0cea1acf4631940a62d75fe9d927:current time)|(170,50) h(15) B(1) N(628561290c64401a380d7ac1cee263b:time stamp)|(200,50) B(1) v(45) h(65) v(45) h(-96) v(10) N(b53f2abdd6f420d9381b57947b6b2d4:time stamp)|(165,150)" xmlns="http://www.ni.com/PlatformFramework" />
+				<Wire Id="d387cfe1566e41609940dce25923121c" Joints="N(628561290c64401a380d7ac1cee263b:date string)|(235,40) N(3d85fce106cd4050ad0fd1ca06798508:c0t0v)|(265,40)" xmlns="http://www.ni.com/PlatformFramework" />
+				<ControlReference Bounds="160 100 85 20" Id="fda8ba270b6b4d3cb4e5df34b1cdbf96" SourceControl="3afcbd3017d14fba82c41b3634c894de" />
+				<PropertyNode Bounds="265 100 75 45" Id="17fedae540984050bc09a997bf53994b" InstanceDataType=":DotNet:NationalInstruments.PanelRuntime.TextProxy, NationalInstruments.PanelRuntime" Mode="InstanceProperties" xmlns="http://www.ni.com/MocCommon">
+					<p.TypeDefinitionTargets xmlns="http://www.ni.com/PanelCommon">
+						<TypeDefinitionTarget TargetName="NI::G Core::Color Picker::Color.gtype" />
+					</p.TypeDefinitionTargets>
+					<PropertyItemTerminal Action="Write" DataType="String" Hotspot="0 25" Id="c0t0v" Path="Text" PathElementMemberKinds="Property" Usage="Required" />
+				</PropertyNode>
+				<Wire Id="a596d77d398f4b4fbd1d2db729b9900f" Joints="N(fda8ba270b6b4d3cb4e5df34b1cdbf96:control reference)|(245,105) N(17fedae540984050bc09a997bf53994b:instance in)|(265,105)" xmlns="http://www.ni.com/PlatformFramework" />
+				<Wire Id="7dce41797b00472dba5365a429b0cd5a" Joints="N(628561290c64401a380d7ac1cee263b:time string)|(235,60) h(20) v(65) N(17fedae540984050bc09a997bf53994b:c0t0v)|(265,125)" xmlns="http://www.ni.com/PlatformFramework" />
+				<Literal Bounds="80 25 90 15" DataType="@893b20f7cf0d47f2a820864751f4cf7c" Id="e209dffc96a04b2eb21895d0545b0ef4" Label="a3de53aafa0949f1a4e6c21de71af491" xmlns="http://www.ni.com/MocCommon">
+					<p.Data>0</p.Data>
+					<EnumBehavior />
+				</Literal>
+				<NodeLabel AttachedTo="e209dffc96a04b2eb21895d0545b0ef4" Bounds="80 43 30 15" Id="a3de53aafa0949f1a4e6c21de71af491" Visible="False" xmlns="http://www.ni.com/PlatformFramework">
+					<p.Text>日期格式</p.Text>
+				</NodeLabel>
+				<Wire Id="887939794f6a4e2e8ae687a4a523c314" Joints="N(e209dffc96a04b2eb21895d0545b0ef4:Out)|(170,30) h(10) v(10) N(628561290c64401a380d7ac1cee263b:date format (0\))|(200,40)" xmlns="http://www.ni.com/PlatformFramework" />
+				<Literal Bounds="145 80 25 15" DataType="Boolean" Id="c8ac92f3827746c79c58849f55f4771c" Label="90615922d7ef4089a4527379fcf112cb" xmlns="http://www.ni.com/MocCommon">
+					<p.Data>False</p.Data>
+					<BooleanBehavior />
+				</Literal>
+				<NodeLabel AttachedTo="c8ac92f3827746c79c58849f55f4771c" Bounds="145 98 30 15" Id="90615922d7ef4089a4527379fcf112cb" Visible="False" xmlns="http://www.ni.com/PlatformFramework">
+					<p.Text>显示秒？</p.Text>
+				</NodeLabel>
+				<Wire Id="ee04d1fcefe445a966f4bf90c6ad293" Joints="N(c8ac92f3827746c79c58849f55f4771c:Out)|(170,85) h(10) v(-25) N(628561290c64401a380d7ac1cee263b:want seconds? (F\))|(200,60)" xmlns="http://www.ni.com/PlatformFramework" />
+				<TimestampToDateTime Bounds="165 145 35 30" Id="b53f2abdd6f420d9381b57947b6b2d4" />
+				<PropertyNode Bounds="220 225 125 140" HasErrorTerminals="False" Id="626651e91bff474099a4479fc3b85067" InstanceDataType="@639e0922674347d1b9df030e91a169f7" Mode="InstanceProperties" xmlns="http://www.ni.com/MocCommon">
+					<PropertyItemTerminal DataType="Double" Hotspot="125 15" Id="c0t0v" Path="fractional second" PathElementMemberKinds="Field" Usage="Optional" />
+					<PropertyItemTerminal DataType="Int32" Hotspot="125 30" Id="c1t0v" Path="second" PathElementMemberKinds="Field" Usage="Optional" />
+					<PropertyItemTerminal DataType="Int32" Hotspot="125 45" Id="c2t0v" Path="minute" PathElementMemberKinds="Field" Usage="Optional" />
+					<PropertyItemTerminal DataType="Int32" Hotspot="125 60" Id="c3t0v" Path="hour" PathElementMemberKinds="Field" Usage="Optional" />
+					<PropertyItemTerminal DataType="Int32" Hotspot="125 75" Id="c4t0v" Path="day of month" PathElementMemberKinds="Field" Usage="Optional" />
+					<PropertyItemTerminal DataType="Int32" Hotspot="125 90" Id="c5t0v" Path="month" PathElementMemberKinds="Field" Usage="Optional" />
+					<PropertyItemTerminal DataType="Int32" Hotspot="125 105" Id="c6t0v" Path="year" PathElementMemberKinds="Field" Usage="Optional" />
+					<PropertyItemTerminal DataType="Int32" Hotspot="125 120" Id="c7t0v" Path="day of week" PathElementMemberKinds="Field" Usage="Optional" />
+				</PropertyNode>
+				<Wire Id="abc0db3848d344a0922a30eba8ba1871" Joints="N(b53f2abdd6f420d9381b57947b6b2d4:date time rec)|(200,150) h(5) v(80) N(626651e91bff474099a4479fc3b85067:instance in)|(220,230)" xmlns="http://www.ni.com/PlatformFramework" />
+			</WhileLoop>
+		</BlockDiagram>
+		<NativeFrontPanel Background="[SMRadialGradientBrush]{Center: 0.5 0.5}, {Origin: 0.5 0.5}, {Radius: 0.5 0.5}, {Stops: {Stop: #ff0070bc 0}, {Stop: #ff191363 1}}" Height="[float]1600" HtmlPanel="[bool]False" Id="5fb0412d87524f4abaea66cfde9559aa" Left="[float]0" MinHeight="[float]0" MinWidth="[float]0" PanelSizeMode="Fixed" Top="[float]0" Width="[float]2000">
+			<PanelExecutionWindow Id="a86ab4c2a3f84a398cfc4a87a52dbf0c" />
+			<Text BaseName="[string]文本" Foreground="[SMColor]#ffb8b8bc" Height="[float]36" Id="444dfee3b7a74822b307a3c7ffe7533d" Left="[float]468" MinHeight="[float]11" MinWidth="[float]11" Name="[string]Date" SizeMode="[TextModelSizeMode]SizeToText" Text="[string]2019/7/8" TextWrapping="[TextWrapping]Wrap" Top="[float]292" Width="[float]117" xmlns="http://www.ni.com/PlatformFramework">
+				<FontSetting FontFamily="Microsoft YaHei" FontSize="20" Id="53b9ca7dc15d42f5b7c1563e57613b93" />
+			</Text>
+			<Text BaseName="[string]文本" Foreground="[SMColor]#ffc1c1c1" Height="[float]36" Id="3afcbd3017d14fba82c41b3634c894de" Left="[float]468" MinHeight="[float]11" MinWidth="[float]11" Name="[string]TimeLabel" SizeMode="[TextModelSizeMode]SizeToText" Text="[string]2:59" TextWrapping="[TextWrapping]Wrap" Top="[float]356" Width="[float]54" xmlns="http://www.ni.com/PlatformFramework">
+				<FontSetting FontFamily="Microsoft YaHei" FontSize="20" Id="e048b61db6114818a50f7f6619bd9ba9" />
+			</Text>
+		</NativeFrontPanel>
+	</VirtualInstrument>
+	<DataTypeReferenceTable xmlns="http://www.ni.com/PlatformFramework">
+		<p.TypeReference TypeId="893b20f7cf0d47f2a820864751f4cf7c">
+			<Enumeration>
+				<Members>
+					<EnumerationMember Value="0" Name="short" />
+					<EnumerationMember Value="1" Name="long" />
+					<EnumerationMember Value="2" Name="abbreviated" />
+				</Members>
+				<DataType>UInt16</DataType>
+			</Enumeration>
+		</p.TypeReference>
+		<p.TypeReference TypeId="639e0922674347d1b9df030e91a169f7">
+			<Composite Id="1" Name="" Cluster="" GenericTypeDefinition="Void" BaseType="Void">
+				<Members>
+					<Field FieldAccessPolicy="ReadWrite" Name="fractional second" DataType="Double" />
+					<Field FieldAccessPolicy="ReadWrite" Name="second" DataType="Int32" />
+					<Field FieldAccessPolicy="ReadWrite" Name="minute" DataType="Int32" />
+					<Field FieldAccessPolicy="ReadWrite" Name="hour" DataType="Int32" />
+					<Field FieldAccessPolicy="ReadWrite" Name="day of month" DataType="Int32" />
+					<Field FieldAccessPolicy="ReadWrite" Name="month" DataType="Int32" />
+					<Field FieldAccessPolicy="ReadWrite" Name="year" DataType="Int32" />
+					<Field FieldAccessPolicy="ReadWrite" Name="day of week" DataType="Int32" />
+					<Field FieldAccessPolicy="ReadWrite" Name="day of year" DataType="Int32" />
+					<Field FieldAccessPolicy="ReadWrite" Name="DST" DataType="Int32" />
+				</Members>
+			</Composite>
+		</p.TypeReference>
+	</DataTypeReferenceTable>
+</SourceFile>

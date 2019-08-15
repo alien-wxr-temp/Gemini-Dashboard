@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SourceFile Checksum="7C4C3C5171FCA3D4CF72DF785A0C8A16F9D673AC82BE3AC4B15CBB46AAB235AD9F3548E522D9505D95A0CDE12CCA8A6F7083140793FBE292FF4AA6C50A220D30" Timestamp="1D537BEE811DD84" xmlns="http://www.ni.com/PlatformFramework">
+	<SourceModelFeatureSet>
+		<ParsableNamespace AssemblyFileVersion="6.4.1.50844" FeatureSetName="数据" Name="http://www.ni.com/Data" OldestCompatibleVersion="6.2.0.0" Version="6.2.0.49152" />
+		<ParsableNamespace AssemblyFileVersion="6.4.1.50844" FeatureSetName="编辑器" Name="http://www.ni.com/PlatformFramework" OldestCompatibleVersion="6.2.0.49154" Version="6.2.0.49154" />
+		<ApplicationVersionInfo Build="6.4.1.50844" Name="LabVIEW NXG" Version="3.1.0" />
+	</SourceModelFeatureSet>
+	<DataIndexDefinition xmlns="http://www.ni.com/Data" />
+	<EnvoyManagerFile Id="89774ffe0ac5497992bd6384ea1fc9b8" xmlns="http://www.ni.com/PlatformFramework">
+		<ProjectSettings Id="32eb1b39aad44f278458062fec757bf3" ModelDefinitionType="ProjectSettings" Name="ZProjectSettings" />
+		<NameScopingEnvoy AutomaticallyResolveUp="True" Id="7ba5a5a5ab884c768f1bfb1082451310" Name="data.xml" NameTracksFileName="True">
+			<EmbeddedDefinitionReference Id="7c8e42537be34dbdb578453cc9196337" ModelDefinitionType="TDMSRootDefinition" Name="TDMS_Root">
+				<TDMSRootDefinition StoragePath="Data-2019-07-08 023329 144.tdms" xmlns="http://www.ni.com/Data" />
+				<EmbeddedDefinitionReference Id="f062d367f0054c969e47269b195b5c26" ModelDefinitionType="TDMSGroupDefinition" Name="TDMS_GROUP">
+					<TDMSGroupDefinition GroupName="捕捉 1" Source="Dashboard.gvi" SourceType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Timestamp="07/08/2019 02:33:29" xmlns="http://www.ni.com/Data" />
+					<EmbeddedDefinitionReference Id="cae7f665083247a199a10c7101308dfa" ModelDefinitionType="TDMSDataItemDefinition" Name="Exit">
+						<TDMSDataItemDefinition DataName="Exit" DataType="Boolean" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+				</EmbeddedDefinitionReference>
+			</EmbeddedDefinitionReference>
+			<EmbeddedDefinitionReference Id="cba0dbbb7d4a407f90ec454887012cb5" ModelDefinitionType="TDMSRootDefinition" Name="TDMS_Root_2">
+				<TDMSRootDefinition StoragePath="Data-2019-07-11 080154 107.tdms" xmlns="http://www.ni.com/Data" />
+				<EmbeddedDefinitionReference Id="3d64d91c95a4466bad2294f0ef9fdc53" ModelDefinitionType="TDMSGroupDefinition" Name="TDMS_GROUP_2">
+					<TDMSGroupDefinition GroupName="捕捉 2" Source="Dashboard.gvi" SourceType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Timestamp="07/11/2019 08:01:54" xmlns="http://www.ni.com/Data" />
+					<EmbeddedDefinitionReference Id="90c67755fe104be887a226c62dc9e8df" ModelDefinitionType="TDMSDataItemDefinition" Name="Available">
+						<TDMSDataItemDefinition DataName="Available" DataType="Boolean" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+					<EmbeddedDefinitionReference Id="e39f95779b264a61857e706c92b1baca" ModelDefinitionType="TDMSDataItemDefinition" Name="Talking">
+						<TDMSDataItemDefinition DataName="Talking" DataType="Boolean" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+					<EmbeddedDefinitionReference Id="9e1ed1201562421c9f81ea3636616895" ModelDefinitionType="TDMSDataItemDefinition" Name="Away">
+						<TDMSDataItemDefinition DataName="Away" DataType="Boolean" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+					<EmbeddedDefinitionReference Id="5da414d1b6bc4b888c62e6334bb773fb" ModelDefinitionType="TDMSDataItemDefinition" Name="Talks">
+						<TDMSDataItemDefinition DataName="Talks" DataType="Boolean" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+					<EmbeddedDefinitionReference Id="85892227973142f89fc30120603dd99a" ModelDefinitionType="TDMSDataItemDefinition" Name="freeLight1">
+						<TDMSDataItemDefinition DataName="freeLight1" DataType="Boolean" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+					<EmbeddedDefinitionReference Id="63c85ccb305a475fb673eac276561035" ModelDefinitionType="TDMSDataItemDefinition" Name="awayLight1">
+						<TDMSDataItemDefinition DataName="awayLight1" DataType="Boolean" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+					<EmbeddedDefinitionReference Id="fde06f3dfe8b45c7aee2d56e277cacfe" ModelDefinitionType="TDMSDataItemDefinition" Name="freeLight1_2">
+						<TDMSDataItemDefinition DataName="freeLight1_2" DataType="Boolean" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+					<EmbeddedDefinitionReference Id="42fe401c8cd148e58dfcb26bef49d552" ModelDefinitionType="TDMSDataItemDefinition" Name="awayLight1_2">
+						<TDMSDataItemDefinition DataName="awayLight1_2" DataType="Boolean" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+					<EmbeddedDefinitionReference Id="915637418d664f6396b41d2425fa769a" ModelDefinitionType="TDMSDataItemDefinition" Name="freeLight1_3">
+						<TDMSDataItemDefinition DataName="freeLight1_3" DataType="Boolean" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+					<EmbeddedDefinitionReference Id="6f778445983a4ad6984a0d6fc2e867c2" ModelDefinitionType="TDMSDataItemDefinition" Name="awayLight1_3">
+						<TDMSDataItemDefinition DataName="awayLight1_3" DataType="Boolean" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+					<EmbeddedDefinitionReference Id="ce3d41ac6b804b37a640b499d6985b15" ModelDefinitionType="TDMSDataItemDefinition" Name="freeLight1_4">
+						<TDMSDataItemDefinition DataName="freeLight1_4" DataType="Boolean" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+					<EmbeddedDefinitionReference Id="ba23a523a3a64cab98411865488ae854" ModelDefinitionType="TDMSDataItemDefinition" Name="awayLight1_4">
+						<TDMSDataItemDefinition DataName="awayLight1_4" DataType="Boolean" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+					<EmbeddedDefinitionReference Id="38e451fd05b84227a05a8fce85ab8c7e" ModelDefinitionType="TDMSDataItemDefinition" Name="freeLight1_8">
+						<TDMSDataItemDefinition DataName="freeLight1_8" DataType="Boolean" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+					<EmbeddedDefinitionReference Id="63497dab9bff4109bf84c2dc605e72e0" ModelDefinitionType="TDMSDataItemDefinition" Name="awayLight1_8">
+						<TDMSDataItemDefinition DataName="awayLight1_8" DataType="Boolean" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+					<EmbeddedDefinitionReference Id="67f5afe9498d41968a45336bee0e0205" ModelDefinitionType="TDMSDataItemDefinition" Name="freeLight1_5">
+						<TDMSDataItemDefinition DataName="freeLight1_5" DataType="Boolean" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+					<EmbeddedDefinitionReference Id="56b261c9443c48bc8aaa77c921a24236" ModelDefinitionType="TDMSDataItemDefinition" Name="awayLight1_5">
+						<TDMSDataItemDefinition DataName="awayLight1_5" DataType="Boolean" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+					<EmbeddedDefinitionReference Id="48b687f2307d44479a83e83af6a2c70e" ModelDefinitionType="TDMSDataItemDefinition" Name="freeLight1_6">
+						<TDMSDataItemDefinition DataName="freeLight1_6" DataType="Boolean" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+					<EmbeddedDefinitionReference Id="eeb752701a24469941fcbbbf10061ef" ModelDefinitionType="TDMSDataItemDefinition" Name="awayLight1_6">
+						<TDMSDataItemDefinition DataName="awayLight1_6" DataType="Boolean" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+					<EmbeddedDefinitionReference Id="9d7c7c3fa6cf4cb790a171c5aee076b6" ModelDefinitionType="TDMSDataItemDefinition" Name="freeLight1_7">
+						<TDMSDataItemDefinition DataName="freeLight1_7" DataType="Boolean" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+					<EmbeddedDefinitionReference Id="20b7ea749c1043a4b7a81dcea44f23f9" ModelDefinitionType="TDMSDataItemDefinition" Name="awayLight1_7">
+						<TDMSDataItemDefinition DataName="awayLight1_7" DataType="Boolean" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+					<EmbeddedDefinitionReference Id="e8639907b7af434c8acf23efee740ccf" ModelDefinitionType="TDMSDataItemDefinition" Name="circleBar1_7">
+						<TDMSDataItemDefinition DataName="circleBar1_7" DataType="Double" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+					<EmbeddedDefinitionReference Id="20d39cd655fa4b5ea258b90aa80815ac" ModelDefinitionType="TDMSDataItemDefinition" Name="circleBar1_8">
+						<TDMSDataItemDefinition DataName="circleBar1_8" DataType="Double" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+					<EmbeddedDefinitionReference Id="b046b76f709140ef915c0efe89fe577a" ModelDefinitionType="TDMSDataItemDefinition" Name="circleBar1">
+						<TDMSDataItemDefinition DataName="circleBar1" DataType="Double" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+					<EmbeddedDefinitionReference Id="3036cee8c4994ed4af2db3d858d98f73" ModelDefinitionType="TDMSDataItemDefinition" Name="circleBar1_2">
+						<TDMSDataItemDefinition DataName="circleBar1_2" DataType="Double" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+					<EmbeddedDefinitionReference Id="9d7e9818ce944394812db239dd659d22" ModelDefinitionType="TDMSDataItemDefinition" Name="circleBar1_3">
+						<TDMSDataItemDefinition DataName="circleBar1_3" DataType="Double" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+					<EmbeddedDefinitionReference Id="e0eee7ec90be4d348192e5f910e8873f" ModelDefinitionType="TDMSDataItemDefinition" Name="circleBar1_4">
+						<TDMSDataItemDefinition DataName="circleBar1_4" DataType="Double" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+					<EmbeddedDefinitionReference Id="fbf44ddd4fa848aa94086888b19dc7da" ModelDefinitionType="TDMSDataItemDefinition" Name="circleBar1_5">
+						<TDMSDataItemDefinition DataName="circleBar1_5" DataType="Double" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+					<EmbeddedDefinitionReference Id="95803b07fc9f4075b8dfbb3fc8de73cb" ModelDefinitionType="TDMSDataItemDefinition" Name="circleBar1_6">
+						<TDMSDataItemDefinition DataName="circleBar1_6" DataType="Double" xmlns="http://www.ni.com/Data" />
+					</EmbeddedDefinitionReference>
+				</EmbeddedDefinitionReference>
+			</EmbeddedDefinitionReference>
+		</NameScopingEnvoy>
+	</EnvoyManagerFile>
+</SourceFile>

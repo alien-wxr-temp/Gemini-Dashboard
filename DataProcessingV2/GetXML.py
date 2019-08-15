@@ -27,24 +27,40 @@ while True:
         awayList = []   #
         awayNum = 0     #
 
-        #Web spider
-        myXML = requests.get(url, verify=False)
-        soup = BeautifulSoup(myXML.text, "lxml")
-        timetick1 = int(timetick2)
-        timetick2 = int(time.time())
-        ticks = time.strftime("%Y%m%d-%H%M%S", time.localtime())
+        try:
+            #Web spider
+            myXML = requests.get(url, verify=False)
+            soup = BeautifulSoup(myXML.text, "lxml")
+            timetick1 = int(timetick2)
+            timetick2 = int(time.time())
+            ticks = time.strftime("%Y%m%d-%H%M%S", time.localtime())
+        except:
+            print("Web spider Exception")
+            with open('./CurrentLog/errorLog.txt','a') as f:
+                f.write(time.strftime("%Y/%m/%d - %H:%M:%S", time.localtime())+'\n')
+                f.close()
+            time.sleep(inc/5)
+            continue
 
-        for row_tag in soup.report.children:
-            j=0
-            single = ['','','','','','','']
-            for col_tag in row_tag.children:
-                if (col_tag['name']=='AgentLogin' or col_tag['name']=='FullName' or col_tag['name']=='AgentState' or col_tag['name']=='TimeInState' or col_tag['name']=='OnShift'):
-                    if (len(col_tag.contents) != 0):
-                        single[j] = col_tag.contents[0]
-                    else:
-                        single[j] = 'NULL'
-                    j=j+1
-            xml.append(single)
+        try:
+            for row_tag in soup.report.children:
+                j=0
+                single = ['','','','','','','']
+                for col_tag in row_tag.children:
+                    if (col_tag['name']=='AgentLogin' or col_tag['name']=='FullName' or col_tag['name']=='AgentState' or col_tag['name']=='TimeInState' or col_tag['name']=='OnShift'):
+                        if (len(col_tag.contents) != 0):
+                            single[j] = col_tag.contents[0]
+                        else:
+                            single[j] = 'NULL'
+                        j=j+1
+                xml.append(single)
+        except:
+            print("XML Exception")
+            with open('./CurrentLog/errorLog.txt','a') as f:
+                f.write(time.strftime("%Y/%m/%d - %H:%M:%S", time.localtime())+'\n')
+                f.close()
+            time.sleep(inc/5)
+            continue
 
         xml2 = [list(t) for t in set(tuple(_) for _ in xml)]
         xml2.sort(key=operator.itemgetter(1))
