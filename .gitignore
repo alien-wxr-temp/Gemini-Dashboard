@@ -2,6 +2,9 @@
 Dashboard_NXG_UHD_v3/Builds/
 Dashboard_NXG_UHD_v3/Photos/
 Dashboard_NXG_UHD_v3/NI Project Data/
+DataProcessing/nameList.txt
+DataProcessingSim/nameList.txt
+DataProcessingV2/nameList.txt
 
 
 ## Ignore Visual Studio temporary files, build results, and
