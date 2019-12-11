@@ -1,7 +1,7 @@
 # Ignore by alien-wxr
-/Dashboard_NXG_UHD_v3/Builds/
-/Dashboard_NXG_UHD_v3/Photos/
-/Dashboard_NXG_UHD_v3/NI Project Data/
+Dashboard_NXG_UHD_v3/Builds/
+Dashboard_NXG_UHD_v3/Photos/
+Dashboard_NXG_UHD_v3/NI Project Data/
 
 
 ## Ignore Visual Studio temporary files, build results, and
