@@ -5,8 +5,8 @@ Dashboard_NXG_UHD_v3/NI Project Data/
 DataProcessing/CurrentLog/
 DataProcessingSim/CurrentLog/
 DataProcessingV2/CurrentLog/
-*.nameList.txt
-*.data.txt
+*\nameList.txt
+*\data.txt
 
 
 ## Ignore Visual Studio temporary files, build results, and
